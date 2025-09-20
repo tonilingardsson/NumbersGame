@@ -16,17 +16,17 @@ namespace NumbersGame
             }
             else if (difficulty == 1) 
             {
-                PlayGame(1, 10);
+                CheckGuess(1, 10);
             } 
             else if (difficulty == 2) 
             {
-                PlayGame(1, 50);
+                CheckGuess(1, 50);
             } 
             else 
             {
-                PlayGame(1, 100);
+                CheckGuess(1, 100);
             }
-            static void PlayGame(int min, int max) {
+            static void CheckGuess(int min, int max) {
                 // Generate a random number between min and max (inclusive) according to the chosen difficulty level
                 int SecretNumber = new Random().Next(min, max + 1);
                 // Allow the user to guess up to 5 times
