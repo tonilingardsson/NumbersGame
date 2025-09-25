@@ -50,6 +50,20 @@ namespace NumbersGame
                 Console.WriteLine("💩 Du förlorade den här gången.");
             }
         }
+        // TryParse method to avoid app crashes w/ wrong type inputs
+        static int GetValidInput(int min, int max)
+        {
+            string userInput = Console.ReadLine();
+            if (int.TryParse(userInput, out int goodInput))
+            {
+                // Conversion ok, user goodInput
+                return goodInput;
+            }
+            else { // Conversion failed, ask user to input an int
+            System.Console.WriteLine("Skriv en siffra här!");
+            return;}
+        }
+
         static bool CheckGuess(int min, int max) {
                 // Generate a random number between min and max (inclusive) according to the chosen difficulty level
                 int SecretNumber = new Random().Next(min, max + 1);
